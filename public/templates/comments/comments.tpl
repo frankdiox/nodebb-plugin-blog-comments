@@ -10,7 +10,7 @@
 		<form action="{relative_path}/comments/reply" method="post">
 			<textarea id="nodebb-content" class="form-control" name="content" placeholder="Join the conversation" rows="3"></textarea>
 		<!-- IF isLoggedIn -->
-			<small>Signed in as <strong>{user.username}</strong>. <strong id="nodebb-error"></strong></small>
+			<small>Signed in as <strong>{user.username}</strong> &bull; <a href="{relative_path}/topic/{tid}">View original thread</a> <strong id="nodebb-error"></strong></small>
 			<button class="btn btn-primary">Post a Reply</button>
 			<input type="hidden" name="_csrf" value="{token}" />
 			<input type="hidden" name="tid" value="{tid}" />
@@ -81,13 +81,13 @@
 		<!-- ENDIF isLoggedIn -->
 	<!-- ENDIF atBottom -->
 
-	<small class="nodebb-copyright">Powered by <a href="http://nodebb.org" target="_blank">NodeBB</a> &bull; <a href="{relative_path}/topic/{tid}">View original thread</a></small>
+	<small class="original-thread"><a href="{relative_path}/topic/{tid}">View original thread in Monaca x Onsen Community</a></small>
 	<button class="btn btn-primary" <!-- IF !posts.length -->style="display: none"<!-- ENDIF !posts.length --> id="nodebb-load-more">Load more comments...</button>
 <!-- ELSE -->
-	Commenting has been disabled.
+	Commenting is not available.
 	<!-- IF isAdmin -->
 	<form action="{relative_path}/comments/publish" method="post">
-		<button class="btn btn-primary">Publish this article to NodeBB</button>
+		<button class="btn btn-primary">Publish this article to Monaca x Onsen Community</button>
 		<input type="hidden" name="markdown" id="nodebb-content-markdown" />
 		<input type="hidden" name="title" id="nodebb-content-title" />
 		<input type="hidden" name="cid" id="nodebb-content-cid" />
