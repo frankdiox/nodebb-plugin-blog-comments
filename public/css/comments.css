@@ -248,6 +248,10 @@
 	-moz-appearance: button;
 }
 
+#nodebb .reply-label i {
+	pointer-events: none;
+}
+
 #nodebb .reply-label:hover {
 	background-color: #E6E6E6;
 }

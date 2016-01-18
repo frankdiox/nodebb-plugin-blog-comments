@@ -163,6 +163,14 @@
 					  nodeList[i].onclick = handler;
 					}
 				};
+				var isInViewport = function(element) {
+					var rect = element.getBoundingClientRect();
+					return (
+					    rect.top >= 0 && rect.left >= 0 &&
+					    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+					    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+					);
+				};
 
 				bindOnClick(nodebbCommentsList.querySelectorAll('[component="post/parent"]'), function(event) {
 					var element = event.target;
@@ -172,7 +180,9 @@
 						goTo = nodebbDiv.querySelector('#nodebb-load-more');
 					}
 
-					goTo.scrollIntoView(false);
+					if (!isInViewport(goTo)) {
+						goTo.scrollIntoView(false);
+					}
 
 					goTo.classList.add('highlight');
 					element.classList.add('highlight');
