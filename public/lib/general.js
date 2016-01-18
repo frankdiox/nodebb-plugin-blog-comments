@@ -233,7 +233,7 @@
 								tags = [];
 							translator.innerHTML = articleData.markDownContent;
 
-							var markdown = translator.firstChild.innerHTML + '\n\n**Click [here]('+ url +') to see the full blog post**';
+							var markdown = translator.firstChild.innerHTML + '\n\n**Click [here]('+ url +') to see the original article**';
 
 							for (var tag in gTags) {
 								if (gTags.hasOwnProperty(tag)) {

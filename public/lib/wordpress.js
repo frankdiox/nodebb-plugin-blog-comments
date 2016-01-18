@@ -235,7 +235,7 @@
 
 							translator.innerHTML = articleData.excerpt;
 
-							var markdown = translator.firstChild.innerHTML + '\n\n**Click [here]('+articlePath+') to see the full blog post**';
+							var markdown = translator.firstChild.innerHTML + '\n\n**Click [here]('+articlePath+') to see the original article**';
 
 							for (var tag in wptags) {
 								if (wptags.hasOwnProperty(tag)) {
